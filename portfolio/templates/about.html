@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Обо мне{% endblock title %}
+{% block main %}
+<main class="main__container">
+    <section class="title">
+        <h1>Обо
+            <span>мне</span>
+        </h1>
+        <span class="title-bg">Резюме</span>
+    </section>
+    <section class="content-about">
+        <article class="content-about__info">
+            <div class="content-about__pers-info about-info">
+                <h2 class="text-select">Персональная информация</h2>
+                <article class="image image-about">
+                    <div class="image__picture image-ibg "><img src="{% static 'img/avatar.jpg' %}" alt="Мухин Сергей">
+                    </div>
+                </article>
+                <ul>
+                    <li><span class="about-info__lable">Имя: </span><span class="about-info__text">Сергей</span>
+                    </li>
+                    <li><span class="about-info__lable">Фамилия: </span><span class="about-info__text">Мухин</span>
+                    </li>
+                    <li><span class="about-info__lable">Возраст: </span><span class="about-info__text">45</span>
+                    </li>
+                    <li><span class="about-info__lable">Национальность: </span><span
+                            class="about-info__text">Русский</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li><span class="about-info__lable">Город: </span><span class="about-info__text">Снежинск</span>
+                    </li>
+                    <li><span class="about-info__lable">Телефон: </span><span
+                            class="about-info__text">+79227148260</span>
+                    </li>
+                    <li><span class="about-info__lable">Почта: </span><span
+                            class="about-info__text">mukhinsergey@list.ru</span>
+                    </li>
+                    <li><span class="about-info__lable">Языки: </span><span class="about-info__text">Русский,
+                            Английский</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="conten-about__skill-info about-info">
+                <h2 class="text-select">Мои навыки</h2>
+                <ul>
+                    <li>
+                        <span class="about-info__lable">Технологии и языки программирования: </span>
+                        <span class="about-info__text">Python, Django, Apache, PHP, SQL, JavaScript, AJAX, HTML,
+                            CSS, SASS,
+                            XML</span>
+                    </li>
+                    <li>
+                        <span class="about-info__lable">Базы данных: </span>
+                        <span class="about-info__text">MySQL, FireBird, PostgreSQL</span>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <hr>
+        <h2 class="text-select">Краткая информация</h2>
+        <p>
+            <span class="text-bold">Я веб разработчик из Снежинска.</span> Увлечен созданием
+            удобных сайтов. Мне нравится создавать отличные и удобные сайты и искать пути решения неординарных
+            задач.
+        </p>
+        <p>
+            <span class="text-bold">Гарантия на работу.</span> После передачи готовой работы я бесплатно
+            исправляю свои ошибки,
+            которые могли быть пропущены при приёмке работы и замечены позже.
+        </p>
+        <p>
+            <span class="text-select">Мне важно чтобы клиент остался доволен!</span>
+        </p>
+        <a type="button" href="{{ home_url }}/contact.html" class="button">
+            <span class="button-text">Контакты</span>
+            <span class="button-icon icon-arrow-right2"></span>
+        </a>
+    </section>
+    <div class="main__menu"></div>
+</main>
+{% endblock main %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Контакты{% endblock title %}
+{% block main %}
+<main class="main__container">
+    <section class="title lock-padding">
+        <h1>
+            <span>Контакты</span>
+        </h1>
+        <span class="title-bg">Связаться</span>
+    </section>
+    <section class="content-contact">
+        <section>
+            <h2 class="text-select">Вперёд!</h2>
+            <p>Не стесняйся связаться со мной. Я всегда открыт для обсуждения новых проектов.</p>
+            <div class="content-contact__message">
+                <a href="#popup__callback" class="popup-link button">
+                    <span class="button-text">Могу перезвонить</span>
+                    <span class="button-icon icon-phone"></span>
+                </a>
+                <div class="content-contact__soc">
+                    <a class="button-small icon-whatsapp" href="https://wa.me/+79227148260" title="Я в watsapp"
+                        target="_blank" rel="noopener"></a>
+                    <a class="button-small icon-telegram" href="https://t.me/reeftank_snz" title="Я в Telegram"
+                        target="_blank" rel="noopener"></a>
+                    <a class="button-small icon-vk" href="https://vk.com/mukhinsv" title="Моя страничка в ВК"
+                        target="_blank" rel="noopener"></a>
+                </div>
+            </div>
+
+            <div id='popup__callback' class='popup'>
+                <div class='popup__body'>
+                    <div class='popup__content'>
+                        <a href='' class='popup__close close-popup'></a>
+                        <div class='popup__title'>Я обязательно перезвоню</div>
+                        <form class='popup__text form' method="post" action="popupmail/">
+                            {% csrf_token %}
+                            <input class='form__input' type="text" name="name" placeholder="Ваше Имя" required>
+                            <input class='form__input' type="text" name="phone" placeholder="Ваш номер телефона"
+                                required>
+                            <button class="button form__button" id="submit" type="submit">
+                                <span class="button-text">Заказать звонок</span>
+                                <span class="button-icon icon-arrow-right2"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <form name="contactform" method="post" action="sendmail/">
+                {% csrf_token %}
+                <div class="form">
+                    <input class='form__input' type="text" name="name" placeholder="Ваше Имя" required>
+                    <input class='form__input' type="email" name="email" placeholder="Ваш адрес электронной почты"
+                        required>
+                    <input class='form__input' type="text" name="subject" placeholder="Тема сообщения" required>
+
+                    <textarea class='form__text' name="message" placeholder="Ваше сообщение" rows="5"
+                        required></textarea>
+                    <button type="submit" class="button form__button">
+                        <span class="button-text">Отправить</span>
+                        <span class="button-icon icon-arrow-right2"></span>
+                    </button>
+
+                </div>
+            </form>
+        </section>
+
+    </section>
+    <div class="main__menu"></div>
+</main>
+{% endblock main %}

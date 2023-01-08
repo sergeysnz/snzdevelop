@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+
+    <title>{% block title %}Title{% endblock title %}</title>
+</head>
+
+<body class="home">
+    <div class="wrapper">
+        <header class="header">
+            <div class="header">
+                <div data-da=".main__menu, 768, first" class="header__menu menu lock-padding">
+                    <div class="menu__burger menu-burger"><span></span></div>
+                    <nav class="menu__body">
+                        <ul class="menu__list">
+                            <li>
+                                <a href="{{ home_url }}/" class="menu__link home">
+                                    <span class="menu__icon icon-home "></span>
+                                    <span class="menu__text">Главная</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ home_url }}/about.html" class="menu__link about">
+                                    <span class="menu__icon icon-user "></span>
+                                    <span class="menu__text">Обо мне</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ home_url }}/portfolio.html" class="menu__link portfolio">
+                                    <span class="menu__icon icon-folder-open "></span>
+                                    <span class="menu__text">Портфолио</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ home_url }}/contact.html" class="menu__link contact">
+                                    <span class="menu__icon icon-address-book "></span>
+                                    <span class="menu__text">Контакты</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        {% block main %}{% endblock main %}
+    </div>
+    <script src="{% static 'js/app.min.js' %}"></script>
+</body>
+
+</html>

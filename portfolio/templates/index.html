@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Главная{% endblock title %}
+{% block main %}
+<main class="main">
+    <article class="image">
+        <div class="image__picture image-ibg"><img src="{% static 'img/avatar.jpg' %}" alt="Мухин Сергей"></div>
+    </article>
+    <article class="content-home">
+        <div class="content-home__title">
+            <hgroup>
+                <h1>Мухин Сергей</h1>
+                <h2>Программирование сайтов</h2>
+            </hgroup>
+        </div>
+        <p>
+            Веб разработчик из Снежинска.<br>
+            Увлечен созданием удобных сайтов. <br>
+            Мне важно, чтобы клиент остался доволен.
+        </p>
+        <a type="button" href="{{ home_url }}/about.html" class="button">
+            <span class="button-text">Больше обо мне</span>
+            <span class="button-icon icon-arrow-right2"></span>
+        </a>
+    </article>
+    <div class="main__menu"></div>
+</main>
+{% endblock main %}
