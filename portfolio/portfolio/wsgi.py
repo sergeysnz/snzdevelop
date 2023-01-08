@@ -8,9 +8,12 @@ https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 """
 
 import os
-
-from django.core.wsgi import get_wsgi_application
+import django
+from django.core.handlers.wsgi import WSGIHandler
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio.settings')
 
-application = get_wsgi_application()
+
+def application():
+    django.setup(set_prefix=False)
+    return WSGIHandler()
